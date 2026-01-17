@@ -1,6 +1,12 @@
 import turtle
 
 polygon=turtle.Turtle()
+
+polygon.shape("square")
+polygon.pencolor("red")
+polygon.speed(5)
+polygon.screen().bgcolor("black")
+
 num_poly=8
 num_sides=8
 side_length=70
