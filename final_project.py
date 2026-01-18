@@ -1,12 +1,15 @@
-#for koch snowflake: axiom=F--F--F, rule= F+F++F+F, angle=60
-#for tree
+#for koch snowflake: axiom=F--F--F, rule= F--> F+F++F+F, angle=60,+=turn right,-=turn left
+#for algae: Axiom=A, rule= A-->AB,B-->A
+#for fractal plant: Axiom=X, rule= X --> F+[[X]-X]-F[-FX]+X, F --> FF
+
+#CODE FOR KOCH SNOWFLAKE PATTERN:
 
 import turtle
 import tkinter as tk
 
 #DEFINING SYMBOLS,AXIOMS AND RULES
 axiom="F--F--F"
-rules={"F" : "F+F--F+F"}
+rules={"F" : "F+F--F+F"} # If we want another symbol like X, define its rule set in the dictionary, put another elif statement in draw function
 iterations=3
 
 def apply_rules(axiom, rules, iterations):
@@ -65,7 +68,7 @@ label2.pack(padx=5,pady=5)
 
 textbox=tk.Text(root, height=3)
 textbox.pack(padx=5,pady=5)
-textbox.insert("1.0", "F : FF--FF\n")
+textbox.insert("1.0", "F : F+F--F+F\n")
 textbox.insert("2.0", "+ : Turn right by an angle\n")
 textbox.insert("3.0", "- : Turn left by an angle")
 
